@@ -14,4 +14,21 @@
 Route::get('/', function () {
     return view('index');
 });
-route::get("/login","LoginController@index");
+
+Route::get('logout',function (){
+    Auth::logout();
+    return redirect('/');
+});
+
+route::get("/login",['as' => 'login', 'uses' => 'LoginController@index']);
+route::post("/login","LoginController@PostLogin");
+
+route::get("/register","Auth\RegisterController@ShowRegisterForm");
+
+route::post("/register","Auth\RegisterController@register");
+
+Route::get('home',function (){
+    return redirect('/');
+});
+
+route::get("/dashboard","DashboardController@ShowDashboardHome");
