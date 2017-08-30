@@ -33,11 +33,12 @@ Route::get('home',function (){
 route::get("/dashboard","DashboardController@ShowDashboardHome");
 
 route::get("/dashboard/profiles","ProfileController@ShowListOfProfiles");
+
 route::get("/dashboard/NewProfile","ProfileController@ShowNewProfileForm");
 route::post("/dashboard/NewProfile","ProfileController@PostNewProfileForm");
 
-
-
-route::get("/dashboard","DashboardController@ShowDashboardHome");
+route::get("/dashboard/profiles/delete/{id}","ProfileController@DeleteProfile");
+route::get("/dashboard/profiles/modify/{id}","ProfileController@ModifyProfile");
+route::post("/dashboard/profiles/modify/{id}","ProfileController@PostModifyProfile");
 
 route::get("/dashboard/calendar","CalendarController@ShowCalendar");

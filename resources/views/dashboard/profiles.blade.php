@@ -16,14 +16,16 @@
       </tr>
       </thead>
       <tbody>
+      @foreach($users as $user)
       <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td><a href="#"><i class="fa fa-pencil" style="margin-left: 40px;"></i></a>
-              <a href="#"><i class="fa fa-remove"></i></a>
+          <td>{{$user->id}}</td>
+          <td>{{$user->name}}</td>
+          <td>{{$user->surname}}</td>
+          <td><a href="/dashboard/profiles/modify/{{$user->id}}" title="ویرایش"><i class="fa fa-pencil" style="margin-left: 40px;"></i></a>
+              <a href="/dashboard/profiles/delete/{{$user->id}}" title="حذف"><i class="fa fa-remove"></i></a>
           </td>
       </tr>
+      @endforeach
       </tbody>
   </table>
 @endsection

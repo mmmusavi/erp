@@ -1,7 +1,11 @@
 @extends('layouts.dashboardApp')
 
 @section('content_title')
+    @if(empty($user))
     فرم ایجاد پرونده
+    @else
+      ویرایش پرونده {{$user->name}}  {{$user->surname}}
+    @endif
 @endsection
 
 @section('content')
@@ -14,14 +18,14 @@
             </ul>
         </div>
     @endif
-    <form class="form-horizontal" role="form" method="POST" action="{{ url('/dashboard/NewProfile') }}">
+    <form class="form-horizontal" role="form" method="POST" action="@if(empty($user)){{ url('/dashboard/NewProfile') }} @else {{ url('/dashboard/profiles/modify/'.$user->id) }} @endif">
         {{ csrf_field() }}
 
         <div class="form-group">
             <label for="name" class="col-md-4 control-label">نام</label>
 
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                <input id="name" type="text" class="form-control" name="name" value="@if(empty($user)){{ old('name') }} @else {{$user->name}} @endif">
             </div>
         </div>
 
@@ -29,7 +33,7 @@
             <label for="surname" class="col-md-4 control-label">نام خانوادگی</label>
 
             <div class="col-md-6">
-                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}">
+                <input id="surname" type="text" class="form-control" name="surname" value="@if(empty($user)){{ old('surname') }} @else {{$user->surname}} @endif">
             </div>
         </div>
 
