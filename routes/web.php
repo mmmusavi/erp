@@ -42,4 +42,8 @@ route::get("/dashboard/profiles/modify/{id}","ProfileController@ModifyProfile");
 route::post("/dashboard/profiles/modify/{id}","ProfileController@PostModifyProfile");
 route::post("/dashboard/profiles/search","ProfileController@SearchProfile");
 
+route::get("/dashboard/FieldCreator","FieldCreatorController@ShowFieldCreatorForm");
+route::post("/dashboard/FieldCreator","FieldCreatorController@FieldCreatorPost");
+
+
 route::get("/dashboard/calendar","CalendarController@ShowCalendar");
