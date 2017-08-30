@@ -24,7 +24,6 @@ route::get("/login",['as' => 'login', 'uses' => 'LoginController@index']);
 route::post("/login","LoginController@PostLogin");
 
 route::get("/register","Auth\RegisterController@ShowRegisterForm");
-
 route::post("/register","Auth\RegisterController@register");
 
 Route::get('home',function (){
@@ -32,6 +31,13 @@ Route::get('home',function (){
 });
 
 route::get("/dashboard","DashboardController@ShowDashboardHome");
+
+route::get("/dashboard/profiles","ProfileController@ShowListOfProfiles");
+route::get("/dashboard/NewProfile","ProfileController@ShowNewProfileForm");
+route::post("/dashboard/NewProfile","ProfileController@PostNewProfileForm");
+
+
+
 route::get("/dashboard","DashboardController@ShowDashboardHome");
 
 route::get("/dashboard/calendar","CalendarController@ShowCalendar");
