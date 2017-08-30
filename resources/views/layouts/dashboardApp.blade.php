@@ -10,6 +10,7 @@
                 <div class="panel-body">
                     <ul class="list-unstyled">
                         <li><a href="/dashboard">داشبورد اصلی</a></li>
+                        <li><a href="/dashboard/profiles">پرونده</a></li>
                     </ul>
                 </div>
             </div>
