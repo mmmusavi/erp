@@ -72,4 +72,11 @@ class ProfileController extends Controller
         $user->save();
         return redirect('/dashboard/profiles/modify/'.$id);
     }
+    public function SearchProfile(Request $request)
+    {
+        $users= \App\User::where([["name", "LIKE","%".$request->keyword."%"],['parent_id',Auth::user()->id]])
+            ->orWhere([["surname", "LIKE","%".$request->keyword."%"],['parent_id',Auth::user()->id]])
+            ->get();
+        return view('dashboard.profiles',compact('users'));
+    }
 }

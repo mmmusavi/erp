@@ -4,8 +4,23 @@
    لیست پرونده ها
     <a href="/dashboard/NewProfile" class="btn btn-info" style="margin-right: 40px;">ایجاد پرونده جدید</a>
 @endsection
-
 @section('content')
+    <form class="form-horizontal" role="form" method="POST" action="/dashboard/profiles/search">
+        {{ csrf_field() }}
+        <div class="form-group">
+            <label for="keyword" class="col-md-4 control-label">جست و جو</label>
+            <div class="col-md-3">
+                <input id="keyword" type="text" class="form-control" name="keyword" placeholder="عبارت را وارد کنید">
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary"> فیلتر</button>
+                    <button type="submit" class="btn btn-primary"> جست و جو</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
   <table class="table text-center">
       <thead>
       <tr>
