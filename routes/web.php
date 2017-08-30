@@ -23,8 +23,8 @@ Route::get('logout',function (){
 route::get("/login",['as' => 'login', 'uses' => 'LoginController@index']);
 route::post("/login","LoginController@PostLogin");
 
-route::get("/register","Auth\RegisterController@ShowRegisterForm");
-route::post("/register","Auth\RegisterController@register");
+route::get("/register","Auth/RegisterController@ShowRegisterForm");
+route::post("/register","Auth/RegisterController@register");
 
 Route::get('home',function (){
     return redirect('/');
