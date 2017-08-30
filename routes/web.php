@@ -32,3 +32,6 @@ Route::get('home',function (){
 });
 
 route::get("/dashboard","DashboardController@ShowDashboardHome");
+route::get("/dashboard","DashboardController@ShowDashboardHome");
+
+route::get("/dashboard/calendar","CalendarController@ShowCalendar");
