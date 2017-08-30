@@ -25,7 +25,7 @@
             <label for="name" class="col-md-4 control-label">نام</label>
 
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control" name="name" value="@if(empty($user)){{ old('name') }} @else {{$user->name}} @endif">
+                <input id="name" type="text" class="form-control" name="name" value="@if(empty($user)){{old('name')}}@else{{$user->name}}@endif">
             </div>
         </div>
 
@@ -33,7 +33,7 @@
             <label for="surname" class="col-md-4 control-label">نام خانوادگی</label>
 
             <div class="col-md-6">
-                <input id="surname" type="text" class="form-control" name="surname" value="@if(empty($user)){{ old('surname') }} @else {{$user->surname}} @endif">
+                <input id="surname" type="text" class="form-control" name="surname" value="@if(empty($user)){{old('surname')}}@else{{$user->surname}}@endif">
             </div>
         </div>
 
