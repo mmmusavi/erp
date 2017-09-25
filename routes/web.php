@@ -23,8 +23,8 @@ Route::get('logout',function (){
 route::get("/login",['as' => 'login', 'uses' => 'LoginController@index']);
 route::post("/login","LoginController@PostLogin");
 
-route::get("/register","Auth/RegisterController@ShowRegisterForm");
-route::post("/register","Auth/RegisterController@register");
+route::get("/register","Auth\RegisterController@ShowRegisterForm");
+route::post("/register","Auth\RegisterController@register");
 
 Route::get('home',function (){
     return redirect('/');
@@ -43,7 +43,9 @@ route::post("/dashboard/profiles/modify/{id}","ProfileController@PostModifyProfi
 route::post("/dashboard/profiles/search","ProfileController@SearchProfile");
 
 route::get("/dashboard/FieldCreator","FieldCreatorController@ShowFieldCreatorForm");
+route::get("/dashboard/FieldCreatorList","FieldCreatorController@ShowFields");
 route::post("/dashboard/FieldCreator","FieldCreatorController@FieldCreatorPost");
-
+route::get("/dashboard/fields/delete/{id}","FieldCreatorController@DeleteField");
+route::get("/dashboard/fields/modify/{id}","FieldCreatorController@ModifyField");
 
 route::get("/dashboard/calendar","CalendarController@ShowCalendar");
